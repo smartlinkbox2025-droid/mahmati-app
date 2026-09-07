@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "مهمتي - إدارة المهام الشخصية"
+description = "تطبيق عربي شخصي وبسيط لإدارة المهام اليومية، تنظيمها حسب المشاريع والأولوية والموعد، مع حفظ محلي والعمل دون اتصال."
+version = "1.0.0"
+id = "artifacts/mahmati"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22848
+
+[services.development]
+run = "pnpm --filter @workspace/mahmati run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/mahmati", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/mahmati/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22848"
+BASE_PATH = "/"
