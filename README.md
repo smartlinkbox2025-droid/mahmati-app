@@ -25,4 +25,4 @@ pnpm install
 PORT=5173 BASE_PATH=/ pnpm --filter @workspace/mahmati run dev
 ```
 
-يتم نشر النسخة تلقائيًا إلى GitHub Pages عند الدفع إلى فرع `main`.
+النسخة المنشورة حاليًا موجودة في جذر فرع `main` ويتم تقديمها عبر GitHub Pages.
